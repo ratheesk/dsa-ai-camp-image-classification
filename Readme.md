@@ -10,12 +10,30 @@ This repository contains code for a simple webcam image classification project u
 ## Usage
 
 1. Clone or download this repository to your local machine.
+2. Train an image classification model in [Google Teachable Machine](https://teachablemachine.withgoogle.com/train/image) and replace the link in sketch.js
+   ```js
+   let imageModelURL = 'https://teachablemachine.withgoogle.com/models/psEZTkqnk/';
+   ```
+4. Update the class that you wanted to detect in line 77 in sketch.js
+  ```js
+  // play sound
+    if (label == 'Class 2') {
+      counter++;
+      // Play sound if "helmet" is continuously predicted for 5 times
+      if (counter >= 2) {
+        audio.play();
+        counter = 0; // Reset the counter
+      }
+    } else {
+      counter = 0; // Reset the counter if prediction is not "helmet"
+    }
+  ```
 
-2. Open the `index.html` file in a web browser.
+6. Open the `index.html` file in a web browser.
 
-3. Allow the browser to access your webcam when prompted.
+7. Allow the browser to access your webcam when prompted.
 
-4. The webcam video feed will be displayed on the page, and the image classification will be performed in real-time.
+8. The webcam video feed will be displayed on the page, and the image classification will be performed in real-time.
 
 ## Model
 
